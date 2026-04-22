@@ -1,4 +1,6 @@
-#Note: Consulted AI on general python semantics + some formatting help 
+#!!!Note: Consulted AI on general python semantics + some formatting help +
+#interfacing with the command line
+
 import os
 import logging
 import cocotb
@@ -206,11 +208,10 @@ async def test_tg(dut):
 
 
 ## Boilerplate code for silencing warnings and running the tests
-## (from SAT lab)
+## + interfacing w/t the command line (got template from SAT Lab)
 def run_test():
     sim = os.getenv("SIM", "icarus")
 
-    # python3 TG_test.py 2  ← picks test 2 (AI helped me here)
     test_num = sys.argv[1] if len(sys.argv) > 1 else "1"
     os.environ["TG_tb"] = test_num
     print(f"--- Running test {test_num} ---")
